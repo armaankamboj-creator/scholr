@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scholr® - Ace Your Exams</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                900: '#1e3a8a',
+              },
+              dark: {
+                bg: '#000000',
+                card: '#121212',
+                text: '#f1f5f9'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'pop-in': 'popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+              'scale-in': 'scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+              'slide-in-right': 'slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'liquid-1': 'liquid1 25s infinite linear',
+              'liquid-2': 'liquid2 20s infinite linear',
+              'liquid-3': 'liquid3 23s infinite linear',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              popIn: {
+                '0%': { opacity: '0', transform: 'scale(0.9)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              scaleIn: {
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              slideInRight: {
+                '0%': { opacity: '0', transform: 'translateX(20px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              liquid1: {
+                "0%": { transform: "translate(0, 0) rotate(0deg) scale(1.5)" },
+                "20%": { transform: "translate(10%, 15%) rotate(40deg) scale(1.6)" },
+                "40%": { transform: "translate(20%, -10%) rotate(90deg) scale(1.4)" },
+                "60%": { transform: "translate(-10%, 10%) rotate(130deg) scale(1.6)" },
+                "80%": { transform: "translate(-20%, -15%) rotate(180deg) scale(1.5)" },
+                "100%": { transform: "translate(0, 0) rotate(360deg) scale(1.5)" }
+              },
+              liquid2: {
+                "0%": { transform: "translate(0, 0) rotate(0deg) scale(1.5)" },
+                "25%": { transform: "translate(-15%, -15%) rotate(-50deg) scale(1.4)" },
+                "50%": { transform: "translate(-10%, 20%) rotate(-100deg) scale(1.6)" },
+                "75%": { transform: "translate(15%, 10%) rotate(-150deg) scale(1.5)" },
+                "100%": { transform: "translate(0, 0) rotate(-360deg) scale(1.5)" }
+              },
+              liquid3: {
+                "0%": { transform: "translate(0, 0) rotate(0deg) scale(1)" },
+                "33%": { transform: "translate(20%, 20%) rotate(120deg) scale(1.2)" },
+                "66%": { transform: "translate(-20%, -10%) rotate(240deg) scale(1.4)" },
+                "100%": { transform: "translate(0, 0) rotate(360deg) scale(1)" }
+              }
+            },
+            transitionTimingFunction: {
+              'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      html { scroll-behavior: smooth; }
+      
+      .glass {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .dark .glass {
+        background: rgba(17, 25, 40, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .glass-card {
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+      }
+      .dark .glass-card {
+        background: rgba(30, 41, 59, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
+    "marked": "https://esm.sh/marked@15.0.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.7"
+  }
+}
+</script>
+</head>
+  <body class="transition-colors duration-500 ease-in-out antialiased selection:bg-brand-500 selection:text-white overflow-x-hidden relative min-h-screen">
+    
+    <!-- Liquid Background -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+      <!-- Base Color -->
+      <div class="absolute inset-0 bg-slate-50 dark:bg-[#050510] transition-colors duration-500"></div>
+      
+      <!-- Liquid Gradients -->
+      <div class="absolute top-0 left-0 w-full h-full filter blur-[100px] opacity-70 dark:opacity-50">
+        <!-- Shape 1 -->
+        <div class="absolute top-[-20%] left-[-20%] w-[80vw] h-[80vw] bg-purple-300 dark:bg-purple-900 rounded-full mix-blend-multiply dark:mix-blend-screen animate-liquid-1"></div>
+        
+        <!-- Shape 2 -->
+        <div class="absolute top-[-20%] right-[-20%] w-[70vw] h-[70vw] bg-blue-300 dark:bg-blue-900 rounded-full mix-blend-multiply dark:mix-blend-screen animate-liquid-2"></div>
+        
+        <!-- Shape 3 -->
+        <div class="absolute bottom-[-20%] left-[20%] w-[90vw] h-[90vw] bg-indigo-300 dark:bg-indigo-900 rounded-full mix-blend-multiply dark:mix-blend-screen animate-liquid-3"></div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="root" class="relative z-10 min-h-screen"></div>
+  </body>
+</html>
